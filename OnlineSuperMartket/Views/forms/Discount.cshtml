@@ -1,0 +1,106 @@
+﻿
+
+
+<div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+        <h4>Discount Manager</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+
+    <div class="form-check-inline">
+        <label class="form-check-label" for="radio1">
+            <input type="radio" class="form-check-input discount_radio" id="radio1" name="optradio"  value="category"> Category
+        </label>                                                                     
+        <label class="form-check-label" for="radio2">                                
+            <input type="radio" class="form-check-input discount_radio" id="radio2" name="optradio" value="brand"> Brand
+        </label>                                                                     
+        <label class="form-check-label" for="radio2">                                
+            <input type="radio" class="form-check-input discount_radio" id="radio2" name="optradio"  value="product"> Product
+        </label>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+
+       
+        <form    method="post" id="discount_form">
+            <div class="form-group product_select_disc">
+                <label for="sel1">Products:</label>
+                <select class="form-control product_discount_select" id=""  name="Product_ID">
+                    <option value="null">-----Select-----</option>
+                      @{ foreach (var item in ViewBag.products)
+                        {
+                            <option id="products_@item.Product_ID" value="@item.Product_ID">@item.Product_name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group brands_select_disc">
+                <label for="sel1">Brands:</label>
+                <select class="form-control brand_discount_select" id="" name="Brand_Code">
+                    <option value="null">-----Select-----</option>
+                       @{ foreach (var item in ViewBag.brands)
+                        {
+                            <option id="brand_@item.brand_ID" value="@item.brand_ID">@item.brand_name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group categories_select_disc">
+                <label for="sel1">Categories:</label>
+                <select class="form-control category_discount_select" id="" name="Category_ID">
+                    <option value="null">-----Select-----</option>
+                     @{ foreach (var item in ViewBag.category)
+                        {
+                            <option id="category_@item.category_ID" value="@item.category_ID">@item.category_name</option>
+                        }
+                    }
+                </select>
+            </div>
+
+
+            <br />
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input getOneByOne" name="Get_One_By_One" value="true">Get One By One
+                </label>                                     
+                <label class="form-check-label" for="radio2_">   
+                    <input type="radio" class="form-check-input dis_type" id="radio2_" name="optradio" value="Upto_percent">Upto %
+                </label>                                        
+                <label class="form-check-label" for="radio2_">   
+                    <input type="radio" class="form-check-input dis_type" id="radio2_" name="optradio" value="Upto_RS">Upto RS
+                </label>
+            </div>
+           
+            <hr>
+            @*<div class="form-group Get_One_By_One">
+                <label for="sel1">Get One By One:</label>
+                <input type="text"  class="form-control" placeholder="Get one by one" name="Get_One_By_One"/>
+            </div>*@
+            <div class="form-group Upto_RS">
+                <label for="sel1">Upto Rs:</label>
+                <input type="text" class="form-control" placeholder="Upto_RS" name="Upto_RS" />
+                
+            </div>
+            <div class="form-group Upto_percent">
+                <label for="sel1">Upto percent:</label>
+                <input type="text" class="form-control" placeholder="Upto Percent" name="Upto_percent" />
+                
+            </div>
+
+
+            <button type="button" id="give_discount"  class="btn btn-primary">Add</button>
+            <button type="reset" class="btn btn-default"> Reset</button>
+        </form>
+    </div>
+
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+    </div>
+
+</div>

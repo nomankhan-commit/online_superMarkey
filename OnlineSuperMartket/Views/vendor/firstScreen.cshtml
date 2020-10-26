@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "firstScreen";
+    //Layout = "~/Views/Shared/myLayOut.cshtml";
+    Layout = null;
+}
+
+
+
+ @*Session["UserID"] = db_result_.userID.ToString();
+                Session["FullName"] = db_result_.first_name.ToString() + " " + db_result_.last_name.ToString();
+                Session["last_name"] = db_result_.last_name.ToString();
+                Session["Role_ID"] = db_result_.role_ID.ToString();
+                Session["userDetails"] = Convert.ToString(db_result_);*@
+
+
+
+@if (Session["UserID"] != null)
+{   
+    <h2>Thank you @Session["FullName"]  for chossing us. </h2>
+    <p>Wait untill you will get an conformation email.</p>
+    <p>Contact us if you have any query.</p>
+
+    <a href="@Url.Action("contactUs", "My")" >Contact us</a>
+}
+

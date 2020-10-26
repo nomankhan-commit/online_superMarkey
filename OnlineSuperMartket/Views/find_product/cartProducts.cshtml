@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewBag.Title = "All_Data";
+    Layout = "~/Views/Shared/myLayOut.cshtml";
+}
+<div class="container">
+    @*<div class="row">
+        <div class="col-md-12">
+
+           
+                <label class="form-check-label">
+                   <h1 id="amount">RS --- @ViewBag.amount PKR</h1>
+                    <input type="hidden" value="@ViewBag.amount" id="hiddemamount"  />
+                </label>
+           
+            <label class="form-check-label">
+                <a href="javascript:;"  id="makeorder">Make Order</a>
+            </label>
+
+           
+               
+
+        </div>
+
+    </div>*@
+
+</div>
+<div class="container-fluid">
+    <div class="row" id="products_date">
+
+        <div class="col-md-12">
+
+
+
+
+            <table  id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Product</th>
+                        
+                        <th scope="col">Dis</th>
+                       
+                        <th scope="col">retail price</th>
+                      
+                        <th scope="col">imgPath</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var a = 0; }
+                    @foreach (var item in ViewBag.data)
+                    {
+                        a++;
+                        var name = item.imgPath;
+                    <tr>
+                        <td>@item.Product_ID</td>
+                        <td>@item.Product_name</td>
+                      
+                        
+                        <td>@item.Product_disc</td>
+                       
+                        <td>@item.retail_price</td>
+                      
+                       
+                        <td colspan=4><img src="~/AddProducts/Image/@name" alt="~/AddProducts/Image/@name" border=3 height=100 width=100></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                
+                                @*<button type="button" name="@item.Product_ID"  id="@item.Product_ID"  class="btn btn-primary buy_products">buy</button>*@
+                                @*<a href="~/find_product/carDelete/@item.AddToCart_id">buy</a>*@
+                                <a href="~/find_product/carDelete/@item.AddToCart_id">Remove</a>
+                            </div>
+                          
+
+                        </td>
+                        
+                    </tr>
+
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+    <div class="row" id="category_data">
+
+        <div class="col-md-12">
+
+
+
+
+         
+
+
+        </div>
+    </div>
+    <div class="row" id="brand_data">
+
+        <div class="col-md-12">
+
+
+
+
+       
+
+
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+
+        <label class="form-check-label">
+            <h1 id="amount">RS --- @ViewBag.amount PKR</h1>
+            <input type="hidden" value="@ViewBag.amount" id="hiddemamount" />
+        </label>
+      @if (ViewBag.amount > 0)
+      {
+        <label class="form-check-label">
+            <a href="javascript:;" class="btn btn-success" id="makeorder">Make Order</a>
+        </label>
+      }
+       
+
+
+
+
+    </div>
+
+</div>
+<script>
+    $(".side_nave_hide").remove();
+
+    $(document).ready(function () {
+        $("#products_date").show();
+
+        $("#category_data").hide();
+        $("#brand_data").hide();
+     
+        $('.table_show').change(function () {
+            debugger;
+            var a = this.value;
+            if (a == "products") {      
+
+                $("#products_date").show();
+
+                $("#category_data").hide();
+                $("#brand_data").hide();
+            }
+            if (a == "categories") {
+                $("#category_data").show();
+
+                $("#products_date").hide();
+                $("#brand_data").hide()
+            }
+            if (a == "brands") {
+                $("#brand_data").show();
+
+                $("#products_date").hide();
+                $("#category_data").hide();
+          
+            }
+
+
+        })
+       
+
+    })
+
+</script>

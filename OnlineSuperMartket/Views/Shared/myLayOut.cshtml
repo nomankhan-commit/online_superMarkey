@@ -1,0 +1,1112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Kitchen :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    @*<link href="~/Content/css/bootstrap.css" rel="stylesheet" />*@
+
+
+    <meta name="keywords" content="Grocery Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome icons -->
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+   
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+
+    @*<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">*@
+
+   
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.7/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.7/css/dx.light.css" />
+    
+     <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/js/easing.js"></script>
+    @*<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+    </script>*@
+    <!-- start-smoth-scrolling -->
+<style>
+    .loader_ {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: url(../Content/loaders/25.gif) 50% 50% no-repeat rgb(249,249,249);
+        display: block;
+         opacity: 0.4; 
+        background-color: rgba(255, 255, 255, 0.57);
+        z-index: 1000001;
+    }
+    /*.cat_brand_toggle{
+    width: 118px;
+    height: 0px;*/
+}
+</style>
+</head>
+
+@*modal*@
+    <!-- The Modal -->
+
+<div class="modal fade" id="myModal_brand">
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/update_brand_form.cshtml")
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal_category">
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/update_category_form.cshtml")
+    </div>
+</div>
+
+
+<div class="modal fade" id="Update_products_Modal">
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/update_products_form.cshtml")
+    </div>
+</div>
+
+
+
+<div class="modal fade " id="buy_products_Modal">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("~/Views/forms/buy_products.cshtml")
+    </div>
+</div>
+
+
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            @Html.Partial("~/Views/forms/Category_Form.cshtml")
+        </div>
+    </div>
+
+
+<div class="modal fade" id="myModal_products" >
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/add_products_form.cshtml")
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="myModal_discount">
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/Discount.cshtml")
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal_categoryVisProducts">
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/categoryVisProducts.cshtml")
+    </div>
+</div>
+
+<div class="modal fade" id="myModal_VendorVisProdcts">
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/VendorVisProducts.cshtml")
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal_categoryVisProductsVendor">
+    <div class="modal-dialog">
+        @Html.Partial("~/Views/forms/categoryVisProductsforVendor.cshtml")
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal_ofterMakeorder">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@*modal*@
+<body>
+    
+   
+    <input type="hidden" id="page"  value="@ViewBag.pageName"/>
+    <input type="hidden" id="link" value="@ViewBag.link_" />
+
+    <span id="nav_section">
+        
+        <span id="first_row_nave">
+            <div class="agileits_header fixed">
+                <div class="w3l_offers">
+                    <a href="javascript:;">Today's special Offers !</a>
+                </div>
+                <div class="w3l_search">
+                    <form action="#" method="post">
+                        <input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <div class="product_list_header">
+                    <form action="#" method="post" class="last">
+                        <fieldset>
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="display" value="1">
+                            @*View your cart*@
+                         @if (Session["UserID"] != null && Session["Role_ID"].ToString() == "4")
+                         {
+                            @*<input type="text" readonly value="@ViewBag.num_atc" class="button" style="cursor:pointer">*@
+                            
+                              <a href="~/Find_product/cartView"><input type="text" readonly value="" class="button" id="showQuentityofCart" style="cursor:pointer"></a>
+                          }
+                            
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="w3l_header_right">
+                    <ul>
+                        <li class="dropdown profile_details_drop">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+                            <div class="mega-dropdown-menu">
+                                <div class="w3ls_vegetables">
+                                    <ul class="dropdown-menu drp-mnu">
+                                       @if (Session["UserID"] != null && Session["Role_ID"].ToString()=="1")
+                                        {                                         
+                                            @*<li><a href="@Url.Action("CreateUsers", "Accounts")" target="_blank" >Create Users</a></li>*@
+                                            @*<li><a href="@Url.Action("logOut", "Accounts")">Add Product</a></li>*@
+                                        }
+
+                                        @if (Session["UserID"] != null)
+                                       {
+                                        @*<li><a href="@Url.Action("login_signup", "Accounts")">Create User</a></li>*@
+                                        @*<li><a href="@Url.Action("logOut", "Accounts")">log Out</a></li>*@
+                                        @*<li><a href ="http://localhost:31574/Accounts/logOut">log Out_</a></li>*@
+                                        <li><a href="@Url.Action("logOut", "Accounts")">log Out_</a></li>
+
+                                        }
+                                       @if (Session["UserID"] == null)
+                                       {
+                                        <li><a href="@Url.Action("login_signup", "Accounts")">Login</a></li>
+                                        <li><a href="@Url.Action("login_signup", "Accounts")">Sign Up</a></li>
+                                       }
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3l_header_right1">
+                    <h2><a href="javascript:;">@Session["FullName"]</a></h2>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <!-- //script-for sticky-nav -->
+
+
+            <div class="logo_products">
+                @if (Session["UserID"] == null || Session["Role_ID"].ToString() == "4")
+                {  <div class="container">
+                    <div class="w3ls_logo_products_left">
+                        <h1><a href="javascript:;"><span>Grocery</span> Store</a></h1>
+                    </div>
+                    <div class="w3ls_logo_products_left1">
+                        <ul class="special_items">
+                            @*li><a href="events.html">Events</a><i>/</i></li*@
+                            <li><a href="http://localhost:31574/aboutUS/about">About Us</a><i>/</i></li>
+                            @*<li><a href="products.html">Best Deals</a><i>/</i></li>*@
+                            <li><a href="http://localhost:31574/services/services">Services</a><i>/</i></li>
+                            <li><a href="http://localhost:31574/My/contactUs">Contact Us</a><i>/</i></li>
+                            <li><a href="http://localhost:31574/My/home_">Home</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="w3ls_logo_products_left1">
+                        <ul class="phone_email">
+                            <li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
+                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div> }
+               
+            </div>
+        </span>
+        
+      
+
+        <!-- products-breadcrumb -->
+        <div class="products-breadcrumb">
+            <div class="container">
+                <ul>
+                    @*<li><i class="fa fa-home" aria-hidden="true"></i><a href="http://localhost:31574/My/home">Profile</a><span>|</span></li>*@
+                 
+                    <li>
+                        @if (Session["UserID"] == null || Session["Role_ID"].ToString() == "4")
+                        {
+                            @*<a href="@Url.Action("signup", "vendor")" class="btn btn-success" id="">Seller Account</a>*@
+                        }
+                        
+                         <li id="dyn_nave"></li><span>|</span>
+                         @if (Session["UserID"] != null && Session["Role_ID"].ToString() == "1")
+                         {
+                            
+                            @*<li><button type="button" class="cat_brand" id="myModal_products" data-toggle="modal" data-target="#myModal_products">Add products</button> </li>*@
+                            @*<li><button type="button" class="cat_brand" id="myModal_discount" data-toggle="modal" data-target="#myModal_discount">Discount</button> </li>*@
+
+                            <li><a href="@Url.Action("VendorDshboard", "Admindashboard")" id="btnAdminDashboard">Dashboard</a> </li>
+                            <li><a href="@Url.Action("All_Data", "My")" >Products</a></li>
+                            <li><a href="@Url.Action("orderslist", "vendor")" id="btnAdminDashboard">My Orders</a> </li>
+                         }
+                    @if (Session["UserID"] != null)
+                    {
+                        var a = Session["Role_ID"].ToString();
+                        //if (a == "1" || a == "2" || a == "3" || a == "5" || a == "6" || a == "7" || a == "8" || a == "9")
+                        @*if (a == "1")
+                        {
+                            <li><a href="http://localhost:31574/My/All_Data">All Rcd</a></li>
+                            <li><button type="button" class="cat_brand" id="BtnVendorList" data-toggle="modal" data-target="#myModal">Vendor List</button> </li>
+                            <li><button type="button" class="cat_brand" id="btnAdminDashboard" data-toggle="modal" data-target="#myModal_products">Dashboard</button> </li>
+                        }*@
+                        if (a == "1009")
+                        {
+                            <li><a href="@Url.Action("vendorListActive", "controller")"  class="btn" id="BtnVendorList">Active Vendor List</a> </li>
+                            <li><a href="@Url.Action("vendorListInActive", "controller")" class="btn" id="BtnVendorList">In-Active Vendor List</a> </li>
+                            <li><button type="button" class="cat_brand" id="add_category" data-toggle="modal" data-target="#myModal">Add Category | Brand</button> </li>
+                            <li><a href="@Url.Action("Index", "Admindashboard")"    id="btnAdminDashboard">Dashboard</a> </li>
+                            @*<li><a href="@Url.Action("ActiveProducts", "controller")" class="btn" id="">All Active Products</a> </li>
+                            <li><a href="@Url.Action("InActiveProducts", "controller")" class="btn" id="">All In-Active Products</a> </li>*@
+                        <li><a href="@Url.Action("AllProducts_", "controller")" class="btn" id="">Products</a></li>
+                        <li><a href="@Url.Action("brandsCategory", "controller")" class="btn" id="">Brands | Categories</a></li>
+
+                        }
+                    }
+                    
+                    <li class="showLiafterShop" style="color:white; display:none"><h4>Thanks For Shopping</h4></li>
+                    <li class="showLiafterShop" style="display:none"><a href="@Url.Action("customerAfterPurchase", "Category")" class="btn btn-success" id="">More Shopping</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </span>
+    <!-- //products-breadcrumb -->
+
+    <!-- banner -->
+    <div class="banner">
+        <div class="loader_"></div>
+        <div class="w3l_banner_nav_left side_nave_hide">
+            <nav class="navbar nav_bottom">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header nav_2">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>              
+                <!-- /.navbar-collapse -->
+                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <ul class="nav navbar-nav nav_1">
+                    @if (Enumerable.Count(ViewBag.category) > 0)
+                    {
+                        foreach (var item in ViewBag.category)
+                        {
+                            var id = @item.category_ID;
+                            var link= "http://localhost:31574/Category/Index/";
+                            var link2 = link + id;
+                   
+                            <li><a href="@link2">@item.category_name</a></li>
+
+                        }
+                    }
+                    @if (Enumerable.Count(ViewBag.category) <= 0)
+
+                    {
+                        <li><a href="javascript:;">no category present</a></li>
+
+                    }
+                 </ul>
+        </div>
+
+        </nav>
+    </div>
+        @RenderBody()
+    </div>
+    <div class="container body-content">
+        @*@RenderBody()*@
+               
+    </div>
+    <footer>
+@if (Session["UserID"] == null || Session["Role_ID"].ToString() == "4")
+{
+    @Html.Partial("~/Views/footer/footer.cshtml")
+}
+        
+    </footer>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/minicart.js"></script>
+    @*<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>*@
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+   
+    <script src="https://cdn3.devexpress.com/jslib/20.1.7/js/dx.all.js"></script>
+
+    <script>
+		paypal.minicart.render();
+
+		paypal.minicart.cart.on('checkout', function (evt) {
+		    debugger;
+		    var items = this.items(),
+				len = items.length,
+				total = 0,
+				i;
+
+			// Count the number of each item in the cart
+			for (i = 0; i < len; i++) {
+				total += items[i].get('quantity');
+			}
+
+			if (total < 3) {
+				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+				evt.preventDefault();
+			}
+		});
+
+    </script>
+
+     <!-- script-for sticky-nav -->
+    <script>
+        $(document).ready(function () {
+            $("input").attr("required", "true");
+		 var navoffeset=$(".agileits_header").offset().top;
+		 $(window).scroll(function(){
+			var scrollpos=$(window).scrollTop();
+			if(scrollpos >=navoffeset){
+				$(".agileits_header").addClass("fixed");
+			}else{
+				$(".agileits_header").removeClass("fixed");
+			}
+		 });
+
+	});
+    </script>
+    <!-- //script-for sticky-nav -->
+    <script>
+$(document).ready(function(){
+    $(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
+});
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+    </script>
+    <!-- //here ends scrolling icon -->
+    @*<script src="~/Content/js/minicart.js"></script>*@
+    @*<script>
+		paypal.minicart.render();
+		paypal.minicart.cart.on('checkout', function (evt) {
+			var items = this.items(),
+				len = items.length,
+				total = 0,
+				i;
+			// Count the number of each item in the cart
+			for (i = 0; i < len; i++) {
+				total += items[i].get('quantity');
+			}
+			if (total < 3) {
+				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+				evt.preventDefault();
+			}
+		});
+    </script>*@
+
+    @*//my js code //*@
+    <script type="text/javascript">
+
+        //$(document).ready(function ($) {
+        //    debugger;
+        //    var a = $("#login_sign_up").html();
+        //    a == "Sign In &amp; Sign Up" ? $("#first_row_nave").remove() : $("#first_row_nave").show();
+
+        //   // $("#first_row_nave").hide()
+        //})
+
+        $(document).ready(function ($) {//my
+            debugger;
+            
+            $('#myTable').DataTable();
+            $('#myTable_cat').DataTable();
+            $('#myTable_brand').DataTable();
+            // change id of Add button and heding in modal start 
+            $(".cat_brand_radio").click(function () {
+                var radioValue = $(".cat_brand_radio:checked").val();
+                if (radioValue == "category") { $("textarea").attr("name", "category_name"); $(".notice").text("Add multiple category with " + ',' + " or " + ';' + " spreated"); $(".add_cat_brand").attr("id", "add_Category") }
+                if (radioValue == "brand") { $("textarea").attr("name", "brand_name"); $(".notice").text("Add multiple brand with " + ',' + " or " + ';' + " spreated"); $(".add_cat_brand").attr("id", "add_Brand") }
+
+            });
+
+                      
+           $(".loader_").hide();
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+
+		$('#login_submit').click(function (e) {
+		    debugger;
+		    
+		 
+             $.ajax({
+                 url: '/Accounts/Login_form',
+                 dataType: 'json',
+                 type: 'post',
+                 data: $('#Login_form').serialize(),                 
+                 success: function (response) {
+                     debugger;
+                     var controller_result = response;
+                     if (controller_result[0] == "Fail") {
+                         //console.log(controller_result)
+                         $('#Login_form')[0].reset();
+                         alert("your password or email is incorrect.")
+
+                     }
+                     if (controller_result[0] == "Success") {
+                         //console.log(controller_result)
+
+                         if (controller_result[1]== "1") {
+
+                             window.location.href = "/vendor/orderslist";
+
+                         } else if (controller_result[1] == "1009") {
+
+                             window.location.href = "/controller/vendorListActive";
+
+                         }
+                         else {
+
+                             window.location.href = "/My/home";
+
+                         }
+                       
+                     }
+                
+                 },
+                 
+                 error: function (error) {
+                     console.log(error);
+                 }
+
+
+		})
+            // e.preventDefault();
+		});
+
+	  
+	    //-----users registeration------//
+		$('#signup_submit').click(function (e) {
+		    debugger;
+		    e.preventDefault();
+		    $.ajax({
+		        url: `/Accounts/create_User`,
+		        dataType: 'json',
+		        type: 'post',
+		        data: $('#signUp_form').serialize(),
+		        success: function (response) {
+		            debugger;
+		            var controller_result = response;
+		            if (controller_result == true) {
+
+		                window.location.href = "/My/home";
+		            }
+
+		            if (controller_result == false) {
+
+		                alert("Your email already is in use.")
+		            }
+
+		        },
+
+		        error: function (error) {
+		            console.log(error);
+		        }
+		    })
+		});
+
+	    //-----users registeration------//
+            //// regiser as a sellor 
+
+		$('#signup_submit_sellor').click(function (e) {
+		    debugger;
+		    e.preventDefault();
+		    $.ajax({
+		        url: `/vendor/getRegister`,
+		        dataType: 'json',
+		        type: 'post',
+		        data: $('#signUp_form').serialize(),
+		        success: function (response) {
+		            debugger;
+		            var controller_result = response;
+		            if (controller_result == true) {
+
+		                window.location.href = "/vendor/firstScreen";
+		            }
+
+		            if (controller_result == false) {
+
+		                alert("Your email already is in use.")
+		            }
+
+		        },
+
+		        error: function (error) {
+		            console.log(error);
+		        }
+		    })
+		});
+
+
+            //// register as a sellor end 
+
+
+	        var id = $(this).attr("id");
+	        var id1;
+	        $(".cat_brand").click(function () {
+                debugger;
+                 id = $(this).attr("id");              
+	            console.log(id);
+	            //alert(id);		   
+	            if (id == "add_brand") {
+	                $(".modal-header h4").text("Add Brand");
+	              id1=  $(".add_cat_brand").attr("id","");
+	            }
+	        })
+	        
+	        var controller;
+	        var method;
+            //-----add category ------//
+	        $(".add_cat_brand").click(function (e) {
+	            debugger;
+		    var id= $(this).attr("id");
+		   
+		    if (id == "add_Category") {
+		         controller = "Accounts";
+		         method = "addCategory";
+		    }
+		    if (id == "add_Brand") {
+		        controller = "Accounts";
+		        method = "addBrand";
+		    }
+
+		   // $(id).click(function (e) {
+
+		    e.preventDefault();
+		    $(".loader_").show();
+		    $.ajax({
+		        url: `/${controller}/${method}`,
+		        dataType: 'json',
+		        type: 'post',
+		        data: $('#category_form_modal').serialize(),
+		        success: function (response) {
+		            debugger;
+		            var controller_result = response;
+		            $(".loader_").hide();
+		        },
+
+		        error: function (error) {
+		            $(".loader_").hide();
+		            alert(`${error}\n Error occurd! check your console for Error.`);
+		            console.log(error)
+		        }
+		    })
+		//});
+        })
+	    //-----add category------//
+
+
+	        $("#add_products").click(function (e) {
+	            debugger;
+	            var formData = new FormData();
+	            var pic = $("input[type=file]").val();
+	            console.log(pic);
+	            formData.append("ImageFile", pic);
+	            formData.append("stock", $("#Stock").val());
+	            formData.append("retail_price", $("#Retail").val());
+	            formData.append("whole_sale_price", $("#Purchase").val());
+	            formData.append("category_ID", $("#categories").val());
+	            formData.append("brand_ID", $("#brands").val());
+	            formData.append("Product_disc", $("#Product_disc").val());
+	            formData.append("Product_name", $("#Product_name").val());
+	            formData.append("imgPath", pic);
+
+
+	            e.preventDefault();
+	            //$(".loader_").show();
+	            $.ajax({
+	                url: `/AddProducts/addProducts`,
+	                dataType: 'json',
+	                type: 'POST',
+	                data: formData,
+	                cache: false,
+	                contentType: false,
+	                processData: false,
+	                success: function (response) {
+	                    debugger;
+	                    var controller_result = response;
+	                    $(".loader_").hide();
+	                },
+	                error: function (error) {
+	                    $(".loader_").hide();
+	                    alert(`${error}\n Error occurd! check your console for Error.`);
+	                    console.log(error)
+	                }
+	            });
+
+	        });
+
+
+	        $('.discount_radio').change(function () {
+	            var a = this.value;
+	          debugger
+	            if (a == "category") {
+	                $(".categories_select_disc").show();
+                       
+	                $(".brands_select_disc").hide().val("");
+	                $(".product_select_disc").hide().val("");
+	            }
+	            if (a == "brand") {
+	              
+	                $(".categories_select_disc").hide().val("");
+                       
+	                $(".brands_select_disc").show();
+	                $(".product_select_disc").hide().val("");
+	            }
+	            if (a == "product") {
+	                $(".categories_select_disc").hide().val("");
+                       
+	                $(".brands_select_disc").hide().val("");
+	                $(".product_select_disc").show();
+	            }
+                console.log(a)
+	        });
+
+	        $('.dis_type').change(function () {
+	            var a = this.value;
+	            debugger
+	            $(".getOneByOne").prop("checked", false);
+	            if (a == "yes") {	               
+	                $(".Upto_RS").hide();
+	                $(".Upto_percent");
+	            }
+	            if (a == "Upto_RS") {
+	               // $(".Upto_percent").find("input").val("");
+	                $(".Upto_percent").hide().find("input").val("");
+	                $(".Upto_RS").show();
+	               
+	            }
+	            if (a == "Upto_percent") {
+	                //$(".Upto_RS").find("input").val("");
+	                $(".Upto_RS").hide().find("input").val("");
+	                $(".Upto_percent").show()
+	               
+	            }
+	            console.log(a)
+	        });
+
+	        $("body").on("click", ".addtocartN", function () {
+	            var iddd = $(this).attr("id");
+	            
+	            $.ajax({
+	                url: `/find_product/addToCart/`+iddd,
+	                dataType: 'json',
+	                type: 'POST',
+	                data: null,
+
+	                success: function (response) {
+	                    debugger;
+	                    var controller_result = response;
+	                    //a_
+	                    $("#showQuentityofCart").val(controller_result)
+
+	                },
+	                error: function (error) {
+
+	                    alert(`${error}\n Error occurd! check your console for Error.`);
+	                    console.log(error)
+	                }
+	            });
+
+
+
+	        })
+
+	        $(".getOneByOne").change(function () {
+	            var a = this.value;
+	            console.log(a);
+	            var isChecked = this.checked;
+	            console.log(isChecked);
+	            $(".Upto_RS").find("input").val("");
+	            $(".Upto_percent").find("input").val("");
+	            if (isChecked == false) {
+	               
+	                $(".Upto_percent").show();
+	                $(".Upto_RS").show();
+
+	                $(".dis_type").prop("checked", false);
+	                $(".dis_type").prop("checked", false);
+	            }
+	            if (isChecked == true) {
+	                $(".Upto_percent").hide();
+
+	                $(".Upto_RS").hide();
+	            }
+
+
+	        })
+
+	        $("#give_discount").click(function (e) {
+
+
+	            debugger;
+	            let data = $("#discount_form").serialize();
+	          
+                console.log("data",data)
+	            $.ajax({
+	                url: `/Accounts/discountManager`,
+	                dataType: 'json',
+	                type: 'POST',
+	                data: data,
+	                
+	                success: function (response) {
+	                    debugger;
+	                    var controller_result = response;	                  
+	                },
+	                error: function (error) {
+	                   
+	                    alert(`${error}\n Error occurd! check your console for Error.`);
+	                    console.log(error)
+	                }
+	            });
+
+	        })
+
+
+
+	        $('.update_product').click(function () {
+	            
+	            var id__ = $(this).closest('tr').children('td:eq(0)').text();	           
+	            var products = $(this).closest('tr').children('td:eq(1)').text();
+	            var category = $(this).closest('tr').children('td:eq(2)').text();
+	            var brands = $(this).closest('tr').children('td:eq(3)').text();
+	            var prod_dis = $(this).closest('tr').children('td:eq(4)').text();
+	            //
+	            var wholeSell = $(this).closest('tr').children('td:eq(5)').text();
+	            var retail = $(this).closest('tr').children('td:eq(6)').text();
+	            var stock = $(this).closest('tr').children('td:eq(7)').text();
+	            var img = $(this).closest('tr').children('td:eq(8)').children("img").attr('src');
+
+	            $("#Product_name").val(products);
+	           // $("#categories").val(category);
+	            //$("#brands").val(brands);
+	            $("#Purchase").val(wholeSell);
+                  
+	            $("#brands option").each(function () {
+
+	                var brd = $(this).text();
+	                if (brd == brands) {
+	                    $(this).attr('selected', 'selected');
+	                 
+	                }
+
+	            })
+	            
+	            $("#categories option").each(function () {
+
+	                var categ = $(this).text();
+	                if (categ == category) {
+	                    $(this).attr('selected', 'selected');
+
+	                }
+
+	            })
+
+
+	            $("#Retail").val(retail);
+	            $("#Stock").val(stock);
+	            $("#id_").val(id__);
+	            $("#Product_disc").val(prod_dis);
+
+
+
+	         	            $('#Update_products_Modal').modal('show');
+	            console.log
+                    (
+                    id,
+                  products,
+	            category ,
+	            brands,
+                wholeSell,
+	            retail,
+                stock ,
+	            img
+                );
+
+
+
+
+	        });
+
+
+
+	        $(".update_category").click(function () {
+
+	            var id__ = $(this).closest('tr').children('td:eq(0)').text();
+	            var cat = $(this).closest('tr').children('td:eq(1)').text();
+	            debugger;
+	            $("#id_category").val(id__);
+	            $("#cat_field").val(cat);
+	            $('#myModal_category').modal('show');
+
+
+	        })
+
+	        $(".update_brand").click(function () {
+	            var id__ = $(this).closest('tr').children('td:eq(0)').text();
+	            var brand = $(this).closest('tr').children('td:eq(1)').text();
+                debugger
+	            $("#id_brand").val(id__);
+	            $("#brand_field").val(brand);
+	            $('#myModal_brand').modal('show');
+	        })
+
+
+	        $('#page').val();
+	        $('#link').val();
+
+	        $("#dyn_nave").text( $('#page').val());
+
+            //-----------------//
+
+
+
+	        //<img src="~/Content/images/10.png" />
+
+	        $('.buy_products').click(function () {
+
+	            var id__ = $(this).closest('tr').children('td:eq(0)').text();
+	            var products = $(this).closest('tr').children('td:eq(1)').text();
+	            var dis = $(this).closest('tr').children('td:eq(2)').text();
+	            var amount = $(this).closest('tr').children('td:eq(3)').text();
+	            var img = $(this).closest('tr').children('td:eq(4)').children("img").attr('src');
+	            var wholeSell = $(this).closest('tr').children('td:eq(5)').text();
+                debugger
+	            var img_ = img.split("/")[3];
+	            //http://localhost:31574/AddProducts/Image/195156868.png
+	            var aa = 'http://localhost:31574/AddProducts/Image/';
+	            $("#p_ac_name").val(products);
+	            $("#p_ac_dis").val(dis);
+	            $("#p_ac_retail").val(`Rs ${amount}`);
+	            $(".p_ac_img").attr("src", `${aa}${img_}`)
+	            //pic_id
+	            $("#pic_id").val(id__);
+
+	            $('#buy_products_Modal').modal('show');
+	           
+
+
+
+	        });
+
+          
+
+
+	        $('#buy_products_ajax').click(function (e) {
+	            debugger;
+	            e.preventDefault();
+	            //var data_ = $("#picIdfomr").serialize();
+	            var formData = new FormData();
+	           // var data_ = $(this).find('form');
+	            var data_ = $(this).html();
+	            formData.append("Product_ID", data_);
+
+	            $.ajax({
+	                url: `/singlePrduct/Index/${data_}`,
+	                dataType: 'json',
+	                type: 'post',
+	                data: data_,
+	                success: function (response) {
+	                    debugger;
+	                    var controller_result = response;
+	                    debugger;
+
+	                },
+
+	                error: function (error) {
+	                    console.log(error);
+	                }
+
+
+	            })
+
+	        });
+
+
+
+            //
+	       
+	        $("body").on("click", "#makeorder", function () {
+	            $(".loader_").show();
+	            var idArray = [];
+	            debugger
+	            $("#myTable_wrapper tbody tr").each(function () {
+
+	                var currentRow = $(this).closest("tr");
+	                idArray.push(currentRow.find("td:eq(0)").html());
+
+
+	            });
+	           
+	            data = {
+	                pids: idArray,
+	                amount: $("#hiddemamount").val()
+	            };
+	            
+	            debugger
+	            $.ajax({
+	                url: `/find_product/makeorder`,
+	                dataType: 'json',
+	                type: 'POST',
+	                data: data,
+	                success: function (response) {
+	                    debugger;
+	                    var controller_result = response;
+	                    $(".loader_").hide();
+
+	                    if (response) {
+	                        //alert("Your order has placed.\n If you have any query please contact us.");
+	                        //window.location.href = "/Category/customerAfterPurchase";
+	                        $(".showLiafterShop").show();
+
+
+	                    }
+
+	                },
+	                error: function (error) {
+	                    $(".loader_").hide();
+	                    alert(`${error}\n Error occurd! check your console for Error.`);
+	                    console.log(error)
+	                }
+	            });
+	        })
+
+
+
+	        $("body").on("click", "#contus", function () {
+	            $(".loader_").show();
+	            
+	         
+	            debugger
+	            $.ajax({
+	                url: `/Admindashboard/ContactusEmail`,
+	                dataType: 'json',
+	                type: 'POST',
+	                data: $("#contactusForm").serialize(),
+	                success: function (response) {
+	                    debugger;
+	                    var controller_result = response;
+	                    $(".loader_").hide();
+
+	                    if (response) {
+	                        alert("Thank You for connacting us.");
+	                        //window.location.href = "/Category/customerAfterPurchase";
+	                        debugger;
+
+	                        
+	                    }
+
+	                },
+	                error: function (error) {
+	                    $(".loader_").hide();
+	                    alert(`${error}\n Error occurd! check your console for Error.`);
+	                    console.log(error)
+	                }
+	            });
+	        })
+
+            //
+
+	});//---end jquery bracket----//
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿
+<div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+        @*<h4>Add Category</h4>*@
+        <p class="notice">Add Products</p>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+
+    
+    <!-- Modal body -->
+    <div class="modal-body">
+@using (Html.BeginForm("addProducts", "AddProducts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+        @*<form  id="add_products_form">*@
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Name:</label>
+                <input type="text" class="form-control" id="Product_name" aria-describedby="emailHelp" name="Product_name" placeholder="Product Name">                
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Products Discription</label>
+                <input type="text" class="form-control" id="Product_disc" name="Product_disc" placeholder="Products Discription">
+            </div>
+            <div class="form-group">
+                <label for="sel1">Brands:</label>
+                <select class="form-control" id="brands" name="brand_ID">
+                    @{ foreach (var item in ViewBag.brands)
+                        {
+                            <option id="brand_@item.brand_ID" value="@item.brand_ID">@item.brand_name</option>
+                        }
+                    }                  
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sel1">Categories:</label>
+                <select class="form-control" id="categories" name="category_ID">
+                    @{ foreach (var item in ViewBag.category)
+                        {
+                            <option id="category_@item.category_ID" value="@item.category_ID">@item.category_name</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Purchase:</label>
+                <input type="text" class="form-control" id="Purchase" name="whole_sale_price" placeholder="Purchase" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Retail:</label>
+                <input type="text" class="form-control" name="retail_price" id="Retail" placeholder="Retail"/>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Stock:</label>
+                <input type="text class="form-control" name="stock" id="Stock" placeholder="Stock"/>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Weight:</label>
+                <input type="text class="form-control" name="Product_code" id="Weight" placeholder="Weight" />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Picture:</label>              
+                @*<div class="checkbox">*@
+                    File Upload :<input  type="file" name="ImageFile" class="form-control"/>
+                @*</div>*@
+            </div>          
+            <button type="submit" id="add_products_"  class="btn btn-primary">Add</button>
+        @*</form>*@
+                        }
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+
+</div>

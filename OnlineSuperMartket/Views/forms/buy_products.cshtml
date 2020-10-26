@@ -1,0 +1,83 @@
+﻿
+<div class="modal-content">
+   
+    <div class="modal-body">
+@using (Html.BeginForm("updateProduct", "My", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="w3l_banner_nav_right">
+
+        @*<img src="~/AddProducts/Image/190149747.jpg" />*@
+        <input type="hidden" id="pic_id" />
+        <div class="agileinfo_single">
+            @*<h5 id="p_ac_name">charminar pulao basmati rice 5 kg</h5>*@
+            <input type="hidden" id="p_ac_name" />
+            <div class="col-md-4 agileinfo_single_left">
+                <img   id="example" src="~/Content/images/1.jpg" alt=" " class="img-responsive p_ac_img" />
+            </div>
+            <div class="col-md-8 agileinfo_single_right">
+                <div class="rating1">
+                    <span class="starRating">
+                        <input id="rating5" type="radio" name="rating" value="5">
+                        <label for="rating5">5</label>
+                        <input id="rating4" type="radio" name="rating" value="4">
+                        <label for="rating4">4</label>
+                        <input id="rating3" type="radio" name="rating" value="3" checked>
+                        <label for="rating3">3</label>
+                        <input id="rating2" type="radio" name="rating" value="2">
+                        <label for="rating2">2</label>
+                        <input id="rating1" type="radio" name="rating" value="1">
+                        <label for="rating1">1</label>
+                    </span>
+                </div>
+                <div class="w3agile_description">
+                    <h4>Description :</h4>
+                    <input type="text" readonly id="p_ac_dis" />
+                    @*<p id="p_ac_dis">
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia deserunt mollit anim id est laborum.Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur.
+                    </p>*@
+                </div>
+                <div class="snipcart-item block">
+                    <div class="snipcart-thumb agileinfo_single_right_snipcart">
+                        @*<h4 id="p_ac_retail">$21.00 <span>$25.00</span></h4>*@
+                        <input type="text" readonly id="p_ac_retail" />
+                    </div>
+                    <div class="snipcart-details agileinfo_single_right_details">
+                        @*<form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="business" value=" " />
+                                <input type="hidden" name="item_name" value="pulao basmati rice" />
+                                <input type="hidden" name="amount" value="21.00" />
+                                <input type="hidden" name="discount_amount" value="1.00" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="hidden" name="return" value=" " />
+                                <input type="hidden" name="cancel_return" value=" " />
+                                <input type="submit" name="submit" value="Add to cart" class="button" />
+                            </fieldset>
+                        </form>*@
+                        <a href="" id="buy_products_ajax" > BUY</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+
+
+    </div>
+
+}
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+
+</div>

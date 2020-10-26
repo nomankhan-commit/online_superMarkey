@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="online_superMarket_systemModelStoreContainer" CdmEntityContainer="online_superMarket_systemEntities">
+    <FunctionImportMapping FunctionImportName="ActiveProducts" FunctionName="online_superMarket_systemModel.Store.ActiveProducts" />
+    <FunctionImportMapping FunctionImportName="ActiveVendor" FunctionName="online_superMarket_systemModel.Store.ActiveVendor" />
+    <FunctionImportMapping FunctionImportName="completeOrder" FunctionName="online_superMarket_systemModel.Store.completeOrder" />
+    <FunctionImportMapping FunctionImportName="deletCart" FunctionName="online_superMarket_systemModel.Store.deletCart" />
+    <FunctionImportMapping FunctionImportName="InActiveProducts" FunctionName="online_superMarket_systemModel.Store.InActiveProducts" />
+    <FunctionImportMapping FunctionImportName="InActiveVendor" FunctionName="online_superMarket_systemModel.Store.InActiveVendor" />
+    <FunctionImportMapping FunctionImportName="sp_ActiveProductsAgainstVendorID" FunctionName="online_superMarket_systemModel.Store.sp_ActiveProductsAgainstVendorID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_ActiveProductsAgainstVendorID_Result">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="sellorID" ColumnName="sellorID" />
+          <ScalarProperty Name="sellorName" ColumnName="sellorName" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="online_superMarket_systemModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_CategryVisProducts" FunctionName="online_superMarket_systemModel.Store.sp_CategryVisProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_CategryVisProducts_Result">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="sellorID" ColumnName="sellorID" />
+          <ScalarProperty Name="sellorName" ColumnName="sellorName" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CategryVisProductsForVendor" FunctionName="online_superMarket_systemModel.Store.sp_CategryVisProductsForVendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_CategryVisProductsForVendor_Result">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="sellorID" ColumnName="sellorID" />
+          <ScalarProperty Name="sellorName" ColumnName="sellorName" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CountofTotalCategory" FunctionName="online_superMarket_systemModel.Store.sp_CountofTotalCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_CountofTotalCategory_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CountofTotalProducts" FunctionName="online_superMarket_systemModel.Store.sp_CountofTotalProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_CountofTotalProducts_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="prductsname" ColumnName="prductsname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CountofTotalVendor" FunctionName="online_superMarket_systemModel.Store.sp_CountofTotalVendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_CountofTotalVendor_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="venderid" ColumnName="venderid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="online_superMarket_systemModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="online_superMarket_systemModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="online_superMarket_systemModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="online_superMarket_systemModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Products" FunctionName="online_superMarket_systemModel.Store.sp_Products">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_Products_Result">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductsAll" FunctionName="online_superMarket_systemModel.Store.sp_ProductsAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_ProductsAll_Result">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="sellorID" ColumnName="sellorID" />
+          <ScalarProperty Name="sellorName" ColumnName="sellorName" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductsAll_" FunctionName="online_superMarket_systemModel.Store.sp_ProductsAll_">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_ProductsAll__Result">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="sellorID" ColumnName="sellorID" />
+          <ScalarProperty Name="sellorName" ColumnName="sellorName" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="online_superMarket_systemModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_sellAcctoCategory" FunctionName="online_superMarket_systemModel.Store.sp_sellAcctoCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_sellAcctoCategory_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_sellAcctocategoryforVender" FunctionName="online_superMarket_systemModel.Store.sp_sellAcctocategoryforVender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_sellAcctocategoryforVender_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_sellAcctoproducts" FunctionName="online_superMarket_systemModel.Store.sp_sellAcctoproducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_sellAcctoproducts_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="prductsname" ColumnName="prductsname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_sellAcctoproductsforVender" FunctionName="online_superMarket_systemModel.Store.sp_sellAcctoproductsforVender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_sellAcctoproductsforVender_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="prductsname" ColumnName="prductsname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_sellAcctoVendor" FunctionName="online_superMarket_systemModel.Store.sp_sellAcctoVendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_sellAcctoVendor_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="venderid" ColumnName="venderid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_sellAcctoVendorforVender" FunctionName="online_superMarket_systemModel.Store.sp_sellAcctoVendorforVender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_sellAcctoVendorforVender_Result">
+          <ScalarProperty Name="countt" ColumnName="countt" />
+          <ScalarProperty Name="venderoname" ColumnName="venderoname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_updateProduct" FunctionName="online_superMarket_systemModel.Store.sp_updateProduct" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="online_superMarket_systemModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_VendorVisProducts" FunctionName="online_superMarket_systemModel.Store.sp_VendorVisProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="online_superMarket_systemModel.sp_VendorVisProducts_Result">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="sellorID" ColumnName="sellorID" />
+          <ScalarProperty Name="sellorName" ColumnName="sellorName" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="update_brand" FunctionName="online_superMarket_systemModel.Store.update_brand" />
+    <FunctionImportMapping FunctionImportName="update_category" FunctionName="online_superMarket_systemModel.Store.update_category" />
+    <EntitySetMapping Name="AddToCarts">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.AddToCart">
+        <MappingFragment StoreEntitySet="AddToCart">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="Product_code" ColumnName="Product_code" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="user_id_" ColumnName="user_id_" />
+          <ScalarProperty Name="AddToCart_id" ColumnName="AddToCart_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="brand_code" ColumnName="brand_code" />
+          <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="img_path" ColumnName="img_path" />
+          <ScalarProperty Name="category_code" ColumnName="category_code" />
+          <ScalarProperty Name="category_disc" ColumnName="category_disc" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discounts">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.Discount">
+        <MappingFragment StoreEntitySet="Discounts">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="Get_One_By_One" ColumnName="Get_One_By_One" />
+          <ScalarProperty Name="Upto_RS" ColumnName="Upto_RS" />
+          <ScalarProperty Name="Upto_percent" ColumnName="Upto_percent" />
+          <ScalarProperty Name="Brand_Code" ColumnName="Brand_Code" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Discount_Code" ColumnName="Discount_Code" />
+          <ScalarProperty Name="Discount_ID" ColumnName="Discount_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="Update_at" ColumnName="Update_at" />
+          <ScalarProperty Name="Create_at" ColumnName="Create_at" />
+          <ScalarProperty Name="Location1" ColumnName="Location" />
+          <ScalarProperty Name="Store_Code" ColumnName="Store_Code" />
+          <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.order">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="isDispatch" ColumnName="isDispatch" />
+          <ScalarProperty Name="customernam" ColumnName="customernam" />
+          <ScalarProperty Name="customerid" ColumnName="customerid" />
+          <ScalarProperty Name="venderoname" ColumnName="venderoname" />
+          <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+          <ScalarProperty Name="prductsname" ColumnName="prductsname" />
+          <ScalarProperty Name="productsAmount" ColumnName="productsAmount" />
+          <ScalarProperty Name="createAt" ColumnName="createAt" />
+          <ScalarProperty Name="productsid" ColumnName="productsid" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="venderid" ColumnName="venderid" />
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payement_Type">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.Payement_Type">
+        <MappingFragment StoreEntitySet="Payement_Type">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="Update_at" ColumnName="Update_at" />
+          <ScalarProperty Name="Create_at" ColumnName="Create_at" />
+          <ScalarProperty Name="Pay_Type" ColumnName="Pay_Type" />
+          <ScalarProperty Name="Pay_Type_ID" ColumnName="Pay_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="retail_price" ColumnName="retail_price" />
+          <ScalarProperty Name="whole_sale_price" ColumnName="whole_sale_price" />
+          <ScalarProperty Name="Product_code" ColumnName="Product_code" />
+          <ScalarProperty Name="Product_disc" ColumnName="Product_disc" />
+          <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="sellorName" ColumnName="sellorName" />
+          <ScalarProperty Name="sellorID" ColumnName="sellorID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="statements">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.statement">
+        <MappingFragment StoreEntitySet="statement">
+          <ScalarProperty Name="is_Active" ColumnName="is_Active" />
+          <ScalarProperty Name="Update_At" ColumnName="Update_At" />
+          <ScalarProperty Name="Create_AT" ColumnName="Create_AT" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Pay_Type_ID" ColumnName="Pay_Type_ID" />
+          <ScalarProperty Name="Stmt_ID" ColumnName="Stmt_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userRoles">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.userRole">
+        <MappingFragment StoreEntitySet="userRoles">
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="role_ID" ColumnName="role_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="online_superMarket_systemModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="shopname" ColumnName="shopname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="role_ID" ColumnName="role_ID" />
+          <ScalarProperty Name="img_path" ColumnName="img_path" />
+          <ScalarProperty Name="Credit_card_expiry" ColumnName="Credit_card_expiry" />
+          <ScalarProperty Name="Credit_card_number" ColumnName="Credit_card_number" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Home_phone" ColumnName="Home_phone" />
+          <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+          <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

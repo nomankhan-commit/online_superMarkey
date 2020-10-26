@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="262478a0ff344039b42f2b7e540862a3" Name="Diagram1">
+        <EntityTypeShape EntityType="online_superMarket_systemModel.AddToCart" Width="1.5" PointX="8.75" PointY="9.875" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Brand" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Category" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Discount" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Location" Width="1.5" PointX="8.75" PointY="1.875" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.order" Width="1.5" PointX="0.75" PointY="10.875" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Payement_Type" Width="1.5" PointX="6" PointY="2" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.Product" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.statement" Width="1.5" PointX="8.25" PointY="5.375" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.sysdiagram" Width="1.5" PointX="10.75" PointY="1.875" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.userRole" Width="1.5" PointX="3.75" PointY="12.75" />
+        <EntityTypeShape EntityType="online_superMarket_systemModel.user" Width="1.5" PointX="6" PointY="11" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_Discounts_Brand" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_Product_Brand" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_Discounts_Category" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_Product_Category" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_Discounts_Product" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_statement_Payement_Type" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_statement_Product" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_statement_users" />
+        <AssociationConnector Association="online_superMarket_systemModel.FK_users_userRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

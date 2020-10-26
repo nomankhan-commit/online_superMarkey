@@ -1,0 +1,336 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+   // Layout = null;
+    Layout = "~/Views/Shared/myLayOut.cshtml";
+}
+
+<div class="container">
+   
+    <h2>Admin Dashboard:</h2>
+    @*<ul class="nav" style="background-color:#9ab57e;color:black">
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("vendorListActive", "controller")" style="color:black">Back To Home</a>
+        </li>
+
+    </ul>*@
+</div>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3 center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.totalproducts</h5>
+                    <p class="card-text">totalproducts.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">  @ViewBag.totalActiveProducts</h5>
+                    <p class="card-text">totalActiveProducts  </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3  center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.totalinActiveProducsts </h5>
+                    <p class="card-text">totalinActiveProducsts</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3  center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.totalCustomer </h5>
+                    <p class="card-text">totalCustomer</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3 center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.totalVendor</h5>
+                    <p class="card-text">totalVendor.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">  @ViewBag.totalActiveVendor</h5>
+                    <p class="card-text">totalActiveVendor  </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3  center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.totalINActiveVendor </h5>
+                    <p class="card-text">totalINActiveVendor</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3  center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.overAllSell</h5>
+                    <p class="card-text">Over all Sell PKR</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-3 center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">  @ViewBag.TotalOrders</h5>
+                    <p class="card-text">Total Orders</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.TotalOrderscompleted</h5>
+                    <p class="card-text">Complete Orders.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3  center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.TotalOrderspending </h5>
+                    <p class="card-text">Pending Orders</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3  center-block">
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">null</h5>
+                    <p class="card-text">Data...</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="demo-container">
+                        <div id="chart-demo">
+                            <div id="metersofOrders"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="demo-container">
+                        <div id="chart-demo">
+                            <div id="metersofSells"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>*@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="demo-container">
+                <div id="chart-demo">
+                    <div id="chartcountCategorygroubBy"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="demo-container">
+                <div id="chart-demo">
+                    <div id="chartcountVendorgroubBy"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="demo-container">
+                <div id="chart-demo">
+                    <div id="chartcountProductsgroubBy"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="demo-container">
+                <div id="chart-demo">
+                    <div id="ChartsellAcctoCategory"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="demo-container">
+                <div id="chart-demo">
+                    <div id="chartsellAcctoVendor"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="demo-container">
+                <div id="chart-demo">
+                    <div id="chartsellAcctoproducts"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+        $(document).ready(function () {
+
+            $(".side_nave_hide").remove();
+            chart("#chartcountCategorygroubBy", "categoryname" , "countt" , "Categories", "bar", @Html.Raw(ViewBag.countCategorygroubBy));
+
+            //chart("#chartcountVendorgroubBy", "venderoname" , "countt" , "Vendors", "bar", @Html.Raw(ViewBag.countVendorgroubBy));
+            chart("#chartcountVendorgroubBy", "venderid" , "countt" , "venders", "bar", @Html.Raw(ViewBag.countVendorgroubBy));
+
+            chart("#chartcountProductsgroubBy", "prductsname" , "countt" , "Products", "bar", @Html.Raw(ViewBag.countProductsgroubBy));
+
+            meter("#metersofSells", 0, 150, 5, @Html.Raw(ViewBag.expectedorders) , "Orders Expected" ,
+              [ { startValue: 50, endValue: 90 },
+              { startValue: 90, endValue: 130 },
+              { startValue: 130, endValue: 150 }
+              ])
+
+
+            meter("#metersofOrders", 0, 2500, 20, @Html.Raw(ViewBag.expectedSells) , "Sells Expected" , [
+               { startValue: 500, endValue: 1000 },
+               { startValue: 1000, endValue: 1500 },
+               { startValue: 2000, endValue: 2500 }
+            ] )
+
+
+            pie("#ChartsellAcctoCategory",@Html.Raw(ViewBag.sp_sellAcctoCategory),"categoryname","countt","category wise sell ");
+            pie("#chartsellAcctoVendor",@Html.Raw(ViewBag.sp_sellAcctoVendor),"venderid","countt","Vendor wise sell ");
+            pie("#chartsellAcctoproducts",@Html.Raw(ViewBag.sp_sellAcctoproducts),"prductsname","countt","Product wise sell ");
+
+            });
+
+        function chart(divid,argumentField , valueField , title, type, datasrc){
+            $(divid).dxChart({
+                dataSource: datasrc,
+                series: {
+                    argumentField:argumentField,
+                    valueField: valueField,
+                    name: title,
+                    type: type,
+                    color: '#ffaa66'
+                },"export": {
+                    enabled: false
+                },
+            });
+        }
+        function meter(divid, startVal, EndVal, tickInterval, value , title , range){
+            $(divid).dxCircularGauge({
+                scale: {
+                    startValue: startVal,
+                    endValue: EndVal,
+                    tickInterval: tickInterval,
+                    label: {
+                        useRangeColors: true
+                    }
+                },
+                rangeContainer: {
+                    palette: "pastel",
+                    ranges:range
+                },
+                title: {
+                    text: title + " " +EndVal ,
+                    font: { size: 28 }
+                },
+                "export": {
+                    enabled: false
+                },
+                value: value
+            });
+
+
+        }
+        function pie(divid,dataSource,argumentField,valueField,title){
+
+            var legendSettings = {
+                verticalAlignment: 'bottom',
+                horizontalAlignment: 'center',
+                itemTextPosition: 'right',
+                rowCount: 2
+            },
+       seriesOptions = [{
+           argumentField: argumentField,
+           valueField: valueField,
+           label: {
+               visible: true,
+               //format: "percent",
+               backgroundColor: 'blue'
+
+           }
+       }],
+       sizeGroupName = "piesGroup";
+
+            $(divid).dxPieChart({
+                dataSource: dataSource,
+                sizeGroup: sizeGroupName,
+                palette: "Soft",
+                title: title,
+                legend: legendSettings,
+                series: seriesOptions
+            });
+
+
+        }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="online_superMarket_systemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="online_superMarket_systemEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="ActiveProducts">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ActiveVendor">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="completeOrder">
+      <Parameter Name="vendrid" Mode="In" Type="Int32" />
+      <Parameter Name="orderid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="deletCart">
+      <Parameter Name="Product_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InActiveProducts">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InActiveVendor">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ActiveProductsAgainstVendorID" ReturnType="Collection(online_superMarket_systemModel.sp_ActiveProductsAgainstVendorID_Result)">
+      <Parameter Name="isActive" Mode="In" Type="Boolean" />
+      <Parameter Name="sellorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CategryVisProducts" ReturnType="Collection(online_superMarket_systemModel.sp_CategryVisProducts_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CategryVisProductsForVendor" ReturnType="Collection(online_superMarket_systemModel.sp_CategryVisProductsForVendor_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="cetegoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CountofTotalCategory" ReturnType="Collection(online_superMarket_systemModel.sp_CountofTotalCategory_Result)">
+      <Parameter Name="idAdmin" Mode="In" Type="Boolean" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CountofTotalProducts" ReturnType="Collection(online_superMarket_systemModel.sp_CountofTotalProducts_Result)">
+      <Parameter Name="idAdmin" Mode="In" Type="Boolean" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CountofTotalVendor" ReturnType="Collection(online_superMarket_systemModel.sp_CountofTotalVendor_Result)" />
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(online_superMarket_systemModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(online_superMarket_systemModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Products" ReturnType="Collection(online_superMarket_systemModel.sp_Products_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductsAll" ReturnType="Collection(online_superMarket_systemModel.sp_ProductsAll_Result)">
+      <Parameter Name="isActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductsAll_" ReturnType="Collection(online_superMarket_systemModel.sp_ProductsAll__Result)" />
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_sellAcctoCategory" ReturnType="Collection(online_superMarket_systemModel.sp_sellAcctoCategory_Result)" />
+    <FunctionImport Name="sp_sellAcctocategoryforVender" ReturnType="Collection(online_superMarket_systemModel.sp_sellAcctocategoryforVender_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_sellAcctoproducts" ReturnType="Collection(online_superMarket_systemModel.sp_sellAcctoproducts_Result)" />
+    <FunctionImport Name="sp_sellAcctoproductsforVender" ReturnType="Collection(online_superMarket_systemModel.sp_sellAcctoproductsforVender_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_sellAcctoVendor" ReturnType="Collection(online_superMarket_systemModel.sp_sellAcctoVendor_Result)" />
+    <FunctionImport Name="sp_sellAcctoVendorforVender" ReturnType="Collection(online_superMarket_systemModel.sp_sellAcctoVendorforVender_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_updateProduct">
+      <Parameter Name="Product_ID" Mode="In" Type="Int32" />
+      <Parameter Name="category_ID" Mode="In" Type="Int32" />
+      <Parameter Name="brand_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Product_name" Mode="In" Type="String" />
+      <Parameter Name="Product_disc" Mode="In" Type="String" />
+      <Parameter Name="whole_sale_price" Mode="In" Type="Int32" />
+      <Parameter Name="Product_code" Mode="In" Type="Int32" />
+      <Parameter Name="retail_price" Mode="In" Type="Int32" />
+      <Parameter Name="stock" Mode="In" Type="Int32" />
+      <Parameter Name="imgPath" Mode="In" Type="String" />
+      <Parameter Name="create_at" Mode="In" Type="DateTime" />
+      <Parameter Name="update_at" Mode="In" Type="DateTime" />
+      <Parameter Name="is_active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sp_VendorVisProducts" ReturnType="Collection(online_superMarket_systemModel.sp_VendorVisProducts_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="update_brand">
+      <Parameter Name="brand_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="brand_name" Mode="In" Type="String" />
+      <Parameter Name="update_at1" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="update_category">
+      <Parameter Name="category_ID1" Mode="In" Type="Int32" />
+      <Parameter Name="category1_name" Mode="In" Type="String" />
+      <Parameter Name="update_at1" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="AddToCarts" EntityType="online_superMarket_systemModel.AddToCart" />
+    <EntitySet Name="Brands" EntityType="online_superMarket_systemModel.Brand" />
+    <EntitySet Name="Categories" EntityType="online_superMarket_systemModel.Category" />
+    <EntitySet Name="Discounts" EntityType="online_superMarket_systemModel.Discount" />
+    <EntitySet Name="Locations" EntityType="online_superMarket_systemModel.Location" />
+    <EntitySet Name="orders" EntityType="online_superMarket_systemModel.order" />
+    <EntitySet Name="Payement_Type" EntityType="online_superMarket_systemModel.Payement_Type" />
+    <EntitySet Name="Products" EntityType="online_superMarket_systemModel.Product" />
+    <EntitySet Name="statements" EntityType="online_superMarket_systemModel.statement" />
+    <EntitySet Name="sysdiagrams" EntityType="online_superMarket_systemModel.sysdiagram" />
+    <EntitySet Name="userRoles" EntityType="online_superMarket_systemModel.userRole" />
+    <EntitySet Name="users" EntityType="online_superMarket_systemModel.user" />
+    <AssociationSet Name="FK_Discounts_Brand" Association="online_superMarket_systemModel.FK_Discounts_Brand">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Discount" EntitySet="Discounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Brand" Association="online_superMarket_systemModel.FK_Product_Brand">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Discounts_Category" Association="online_superMarket_systemModel.FK_Discounts_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Discount" EntitySet="Discounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="online_superMarket_systemModel.FK_Product_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Discounts_Product" Association="online_superMarket_systemModel.FK_Discounts_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Discount" EntitySet="Discounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_statement_Payement_Type" Association="online_superMarket_systemModel.FK_statement_Payement_Type">
+      <End Role="Payement_Type" EntitySet="Payement_Type" />
+      <End Role="statement" EntitySet="statements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_statement_Product" Association="online_superMarket_systemModel.FK_statement_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="statement" EntitySet="statements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_statement_users" Association="online_superMarket_systemModel.FK_statement_users">
+      <End Role="user" EntitySet="users" />
+      <End Role="statement" EntitySet="statements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_userRoles" Association="online_superMarket_systemModel.FK_users_userRoles">
+      <End Role="userRole" EntitySet="userRoles" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_ActiveProductsAgainstVendorID_Result">
+    <Property Type="Int32" Name="Product_ID" Nullable="false" />
+    <Property Type="Int32" Name="sellorID" Nullable="true" />
+    <Property Type="String" Name="sellorName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="is_active" Nullable="true" />
+    <Property Type="Int32" Name="retail_price" Nullable="false" />
+    <Property Type="String" Name="Product_disc" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="stock" Nullable="true" />
+    <Property Type="Int32" Name="whole_sale_price" Nullable="false" />
+    <Property Type="String" Name="imgPath" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Product_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="brand_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="brand_ID" Nullable="false" />
+    <Property Type="Int32" Name="category_ID" Nullable="false" />
+    <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_CategryVisProducts_Result">
+    <Property Type="Int32" Name="Product_ID" Nullable="false" />
+    <Property Type="Boolean" Name="is_active" Nullable="true" />
+    <Property Type="Int32" Name="sellorID" Nullable="true" />
+    <Property Type="String" Name="sellorName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="retail_price" Nullable="false" />
+    <Property Type="String" Name="Product_disc" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="stock" Nullable="true" />
+    <Property Type="Int32" Name="whole_sale_price" Nullable="false" />
+    <Property Type="String" Name="imgPath" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Product_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="brand_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="brand_ID" Nullable="false" />
+    <Property Type="Int32" Name="category_ID" Nullable="false" />
+    <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_CategryVisProductsForVendor_Result">
+    <Property Type="Int32" Name="Product_ID" Nullable="false" />
+    <Property Type="Boolean" Name="is_active" Nullable="true" />
+    <Property Type="Int32" Name="sellorID" Nullable="true" />
+    <Property Type="String" Name="sellorName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="retail_price" Nullable="false" />
+    <Property Type="String" Name="Product_disc" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="stock" Nullable="true" />
+    <Property Type="Int32" Name="whole_sale_price" Nullable="false" />
+    <Property Type="String" Name="imgPath" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Product_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="brand_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="brand_ID" Nullable="false" />
+    <Property Type="Int32" Name="category_ID" Nullable="false" />
+    <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_CountofTotalCategory_Result">
+    <Property Type="Int32" Name="countt" Nullable="true" />
+    <Property Type="String" Name="categoryname" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_CountofTotalProducts_Result">
+    <Property Type="Int32" Name="countt" Nullable="true" />
+    <Property Type="String" Name="prductsname" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_CountofTotalVendor_Result">
+    <Property Type="Int32" Name="countt" Nullable="true" />
+    <Property Type="Int32" Name="venderid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_Products_Result">
+    <Property Type="Int32" Name="Product_ID" Nullable="false" />
+    <Property Type="Boolean" Name="is_active" Nullable="true" />
+    <Property Type="Int32" Name="retail_price" Nullable="false" />
+    <Property Type="String" Name="Product_disc" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="stock" Nullable="true" />
+    <Property Type="Int32" Name="whole_sale_price" Nullable="false" />
+    <Property Type="String" Name="imgPath" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Product_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="brand_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="brand_ID" Nullable="false" />
+    <Property Type="Int32" Name="category_ID" Nullable="false" />
+    <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductsAll_Result">
+    <Property Type="Int32" Name="Product_ID" Nullable="false" />
+    <Property Type="Int32" Name="sellorID" Nullable="true" />
+    <Property Type="String" Name="sellorName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="is_active" Nullable="true" />
+    <Property Type="Int32" Name="retail_price" Nullable="false" />
+    <Property Type="String" Name="Product_disc" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="stock" Nullable="true" />
+    <Property Type="Int32" Name="whole_sale_price" Nullable="false" />
+    <Property Type="String" Name="imgPath" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Product_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="brand_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="brand_ID" Nullable="false" />
+    <Property Type="Int32" Name="category_ID" Nullable="false" />
+    <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductsAll__Result">
+    <Property Type="Int32" Name="Product_ID" Nullable="false" />
+    <Property Type="Boolean" Name="is_active" Nullable="true" />
+    <Property Type="Int32" Name="sellorID" Nullable="true" />
+    <Property Type="String" Name="sellorName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="retail_price" Nullable="false" />
+    <Property Type="String" Name="Product_disc" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="stock" Nullable="true" />
+    <Property Type="Int32" Name="whole_sale_price" Nullable="false" />
+    <Property Type="String" Name="imgPath" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Product_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="brand_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="brand_ID" Nullable="false" />
+    <Property Type="Int32" Name="category_ID" Nullable="false" />
+    <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_sellAcctoCategory_Result">
+    <Property Type="Int64" Name="countt" Nullable="true" />
+    <Property Type="String" Name="categoryname" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_sellAcctocategoryforVender_Result">
+    <Property Type="Int64" Name="countt" Nullable="true" />
+    <Property Type="String" Name="categoryname" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_sellAcctoproducts_Result">
+    <Property Type="Int64" Name="countt" Nullable="true" />
+    <Property Type="String" Name="prductsname" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_sellAcctoproductsforVender_Result">
+    <Property Type="Int64" Name="countt" Nullable="true" />
+    <Property Type="String" Name="prductsname" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_sellAcctoVendor_Result">
+    <Property Type="Int64" Name="countt" Nullable="true" />
+    <Property Type="Int32" Name="venderid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_sellAcctoVendorforVender_Result">
+    <Property Type="Int64" Name="countt" Nullable="true" />
+    <Property Type="String" Name="venderoname" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_VendorVisProducts_Result">
+    <Property Type="Int32" Name="Product_ID" Nullable="false" />
+    <Property Type="Boolean" Name="is_active" Nullable="true" />
+    <Property Type="Int32" Name="sellorID" Nullable="true" />
+    <Property Type="String" Name="sellorName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="retail_price" Nullable="false" />
+    <Property Type="String" Name="Product_disc" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="stock" Nullable="true" />
+    <Property Type="Int32" Name="whole_sale_price" Nullable="false" />
+    <Property Type="String" Name="imgPath" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Product_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="brand_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="brand_ID" Nullable="false" />
+    <Property Type="Int32" Name="category_ID" Nullable="false" />
+    <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="AddToCart">
+    <Key>
+      <PropertyRef Name="AddToCart_id" />
+    </Key>
+    <Property Name="AddToCart_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id_" Type="Int32" />
+    <Property Name="Product_ID" Type="Int32" />
+    <Property Name="category_ID" Type="Int32" Nullable="false" />
+    <Property Name="brand_ID" Type="Int32" />
+    <Property Name="Product_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Product_disc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Product_code" Type="Int32" />
+    <Property Name="whole_sale_price" Type="Int32" Nullable="false" />
+    <Property Name="retail_price" Type="Int32" Nullable="false" />
+    <Property Name="stock" Type="Int32" />
+    <Property Name="imgPath" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="create_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="brand_ID" />
+    </Key>
+    <Property Name="brand_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="brand_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="brand_code" Type="Int32" />
+    <Property Name="create_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" />
+    <NavigationProperty Name="Discounts" Relationship="online_superMarket_systemModel.FK_Discounts_Brand" FromRole="Brand" ToRole="Discount" />
+    <NavigationProperty Name="Products" Relationship="online_superMarket_systemModel.FK_Product_Brand" FromRole="Brand" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="category_ID" />
+    </Key>
+    <Property Name="category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="category_disc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="category_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="img_path" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="create_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" />
+    <NavigationProperty Name="Discounts" Relationship="online_superMarket_systemModel.FK_Discounts_Category" FromRole="Category" ToRole="Discount" />
+    <NavigationProperty Name="Products" Relationship="online_superMarket_systemModel.FK_Product_Category" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="Discount_ID" />
+    </Key>
+    <Property Name="Discount_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Discount_Code" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Product_ID" Type="Int32" />
+    <Property Name="Category_ID" Type="Int32" />
+    <Property Name="Brand_Code" Type="Int32" />
+    <Property Name="Upto_percent" Type="Int32" />
+    <Property Name="Upto_RS" Type="Int32" />
+    <Property Name="Get_One_By_One" Type="Boolean" />
+    <Property Name="create_at" Type="DateTime" Precision="3" />
+    <Property Name="update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" />
+    <NavigationProperty Name="Brand" Relationship="online_superMarket_systemModel.FK_Discounts_Brand" FromRole="Discount" ToRole="Brand" />
+    <NavigationProperty Name="Category" Relationship="online_superMarket_systemModel.FK_Discounts_Category" FromRole="Discount" ToRole="Category" />
+    <NavigationProperty Name="Product" Relationship="online_superMarket_systemModel.FK_Discounts_Product" FromRole="Discount" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Location_ID" />
+    </Key>
+    <Property Name="Location_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Store_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Location1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Create_at" Type="DateTime" Precision="3" />
+    <Property Name="Update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="orderID" />
+    </Key>
+    <Property Name="orderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="venderid" Type="Int32" />
+    <Property Name="categoryid" Type="Int32" />
+    <Property Name="productsid" Type="Int32" />
+    <Property Name="createAt" Type="DateTime" Precision="3" />
+    <Property Name="productsAmount" Type="Int64" />
+    <Property Name="prductsname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="categoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="venderoname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customerid" Type="Int32" />
+    <Property Name="customernam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isDispatch" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Payement_Type">
+    <Key>
+      <PropertyRef Name="Pay_Type_ID" />
+    </Key>
+    <Property Name="Pay_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pay_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Create_at" Type="DateTime" Precision="3" />
+    <Property Name="Update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" />
+    <NavigationProperty Name="statements" Relationship="online_superMarket_systemModel.FK_statement_Payement_Type" FromRole="Payement_Type" ToRole="statement" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sellorID" Type="Int32" />
+    <Property Name="sellorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="category_ID" Type="Int32" Nullable="false" />
+    <Property Name="brand_ID" Type="Int32" />
+    <Property Name="Product_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Product_disc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Product_code" Type="Int32" />
+    <Property Name="whole_sale_price" Type="Int32" Nullable="false" />
+    <Property Name="retail_price" Type="Int32" Nullable="false" />
+    <Property Name="stock" Type="Int32" />
+    <Property Name="imgPath" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="create_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" />
+    <NavigationProperty Name="Brand" Relationship="online_superMarket_systemModel.FK_Product_Brand" FromRole="Product" ToRole="Brand" />
+    <NavigationProperty Name="Category" Relationship="online_superMarket_systemModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Discounts" Relationship="online_superMarket_systemModel.FK_Discounts_Product" FromRole="Product" ToRole="Discount" />
+    <NavigationProperty Name="statements" Relationship="online_superMarket_systemModel.FK_statement_Product" FromRole="Product" ToRole="statement" />
+  </EntityType>
+  <EntityType Name="statement">
+    <Key>
+      <PropertyRef Name="Stmt_ID" />
+    </Key>
+    <Property Name="Stmt_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pay_Type_ID" Type="Int32" />
+    <Property Name="User_ID" Type="Int32" />
+    <Property Name="Product_ID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Create_AT" Type="DateTime" Precision="3" />
+    <Property Name="Update_At" Type="DateTime" Precision="3" />
+    <Property Name="is_Active" Type="Boolean" />
+    <NavigationProperty Name="Payement_Type" Relationship="online_superMarket_systemModel.FK_statement_Payement_Type" FromRole="statement" ToRole="Payement_Type" />
+    <NavigationProperty Name="Product" Relationship="online_superMarket_systemModel.FK_statement_Product" FromRole="statement" ToRole="Product" />
+    <NavigationProperty Name="user" Relationship="online_superMarket_systemModel.FK_statement_users" FromRole="statement" ToRole="user" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="userRole">
+    <Key>
+      <PropertyRef Name="role_ID" />
+    </Key>
+    <Property Name="role_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users" Relationship="online_superMarket_systemModel.FK_users_userRoles" FromRole="userRole" ToRole="user" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City_ID" Type="Int32" />
+    <Property Name="State_ID" Type="Int32" />
+    <Property Name="Country_ID" Type="Int32" />
+    <Property Name="Home_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Credit_card_number" Type="Int64" />
+    <Property Name="Credit_card_expiry" Type="Int64" />
+    <Property Name="img_path" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="role_ID" Type="Int32" Nullable="false" />
+    <Property Name="create_at" Type="DateTime" Precision="3" />
+    <Property Name="update_at" Type="DateTime" Precision="3" />
+    <Property Name="is_active" Type="Boolean" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="shopname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="statements" Relationship="online_superMarket_systemModel.FK_statement_users" FromRole="user" ToRole="statement" />
+    <NavigationProperty Name="userRole" Relationship="online_superMarket_systemModel.FK_users_userRoles" FromRole="user" ToRole="userRole" />
+  </EntityType>
+  <Association Name="FK_Discounts_Brand">
+    <End Type="online_superMarket_systemModel.Brand" Role="Brand" Multiplicity="0..1" />
+    <End Type="online_superMarket_systemModel.Discount" Role="Discount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="brand_ID" />
+      </Principal>
+      <Dependent Role="Discount">
+        <PropertyRef Name="Brand_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Brand">
+    <End Type="online_superMarket_systemModel.Brand" Role="Brand" Multiplicity="0..1" />
+    <End Type="online_superMarket_systemModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="brand_ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="brand_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Discounts_Category">
+    <End Type="online_superMarket_systemModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="online_superMarket_systemModel.Discount" Role="Discount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_ID" />
+      </Principal>
+      <Dependent Role="Discount">
+        <PropertyRef Name="Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Type="online_superMarket_systemModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="online_superMarket_systemModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Discounts_Product">
+    <End Type="online_superMarket_systemModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="online_superMarket_systemModel.Discount" Role="Discount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="Discount">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_statement_Payement_Type">
+    <End Type="online_superMarket_systemModel.Payement_Type" Role="Payement_Type" Multiplicity="0..1" />
+    <End Type="online_superMarket_systemModel.statement" Role="statement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payement_Type">
+        <PropertyRef Name="Pay_Type_ID" />
+      </Principal>
+      <Dependent Role="statement">
+        <PropertyRef Name="Pay_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_statement_Product">
+    <End Type="online_superMarket_systemModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="online_superMarket_systemModel.statement" Role="statement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="statement">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_statement_users">
+    <End Type="online_superMarket_systemModel.user" Role="user" Multiplicity="0..1" />
+    <End Type="online_superMarket_systemModel.statement" Role="statement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="statement">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_userRoles">
+    <End Type="online_superMarket_systemModel.userRole" Role="userRole" Multiplicity="1" />
+    <End Type="online_superMarket_systemModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userRole">
+        <PropertyRef Name="role_ID" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

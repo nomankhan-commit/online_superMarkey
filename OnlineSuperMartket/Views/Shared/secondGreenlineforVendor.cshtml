@@ -1,0 +1,51 @@
+﻿<div class="col-md-12">
+
+
+    <label class="form-check-label">
+
+
+
+        <a href="@Url.Action("ActiveProducts", "my")" class="btn btn-primary">Active Products</a>
+    </label>
+
+
+    <label class="form-check-label">
+        <a href="@Url.Action("InActiveProducts", "my")" class="btn btn-primary">In-Active Products</a>
+    </label>
+
+
+    @*<label class="form-check-label">
+        <input type="radio" id="brand_radio" value="brands" class="form-check-input table_show" name="optradio">Brands
+    </label>*@
+
+    <label class="form-check-label">
+        <button type="button" class="btn" id="categoryVisProdctsForVendor">Category vise Products</button>
+    </label>
+
+
+    <label class="form-check-label">
+        <button type="button" class="cat_brand" id="myModal_products" data-toggle="modal" data-target="#myModal_products">Add products</button> 
+    </label>
+
+   
+    @*<label class="form-check-label">
+        <button type="button" class="btn" id="VendorVisProdcts">Vendor vise Products</button>
+    </label>*@
+
+
+</div>
+
+<script>
+
+    $("body").on("click", "#categoryVisProdctsForVendor", function () {
+        $("body #myModal_categoryVisProductsVendor").modal("show");
+
+    })
+
+   
+
+
+
+
+</script>
+

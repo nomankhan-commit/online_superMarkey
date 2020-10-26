@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "All_Data";
+    Layout = "~/Views/Shared/myLayOut.cshtml";
+}
+
+<style>
+    .isdisptc {
+    background-color:#a28d8d
+    }
+    .notdis {
+        background-color:white
+    }
+
+</style>
+<div class="container">
+    <div class="row">
+        @*<div class="col-md-12">*@
+
+
+        @*<label class="form-check-label">*@
+        @*<input type="radio" id="products_radio" value="products" class="form-check-input table_show" name="optradio" selected>*@products
+        @*</label>*@
+
+
+        @*<label class="form-check-label">
+                <input type="radio" id="category_radio" value="categories" class="form-check-input table_show" name="optradio">Categories
+            </label>*@
+
+
+        @*<label class="form-check-label">
+                <input type="radio" id="brand_radio" value="brands" class="form-check-input table_show" name="optradio">Brands
+            </label>*@
+
+        @*</div>*@
+        @*@Html.Partial("~/Views/Shared/secondGreenlineforVendor.cshtml")*@
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div class="row" id="products_date">
+
+        <div class="col-md-12">
+
+
+
+
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">prductsname</th>
+                        <th scope="col">productsAmount</th>
+                        <th scope="col">categoryname</th>
+                        <th scope="col">prductsname</th>
+                        <th scope="col">customernam</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    @foreach (var item in ViewBag.orders)
+                    {
+
+                        var isdtch = item.isDispatch;
+                        var dds = isdtch != true ? "isdisptc" : "";
+
+
+                        <tr class="@dds">
+                            <td>@item.prductsname</td>
+                            <td>@item.productsAmount</td>
+                            <td>@item.categoryname</td>
+                            <td>@item.prductsname</td>
+                            <td>@item.customernam</td>
+
+
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    @if (!isdtch)
+                                    {
+                                        <a href="@Url.Action("makeDispatch", "vendor" , new {id = item.orderID })" class="btn">Complete Order</a>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="javascript:;" id="@item.orderID" disabled class="btn">Completed</a>
+
+                                    }
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+    <div class="row" id="category_data">
+
+        <div class="col-md-12">
+
+
+
+
+            @*<table id="myTable_cat">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">category</th>
+                            <th scope="col">Action</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in ViewBag.category)
+                        {
+
+
+                            <tr>
+                                <td>@item.category_ID</td>
+                                <td>@item.category_name</td>
+
+
+
+
+                              <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                                        <button type="button" name="@item.category_ID" id="@item.category_ID" class="btn btn-primary update_category">Update</button>
+                                        <button type="button" name="@item.category_ID" id="@item.category_ID" class="btn btn-danger dlt_category">Delete</button>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>*@
+
+
+        </div>
+    </div>
+    <div class="row" id="brand_data">
+
+        <div class="col-md-12">
+
+
+
+
+            @*<table id="myTable_brand">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">brand</th>
+                        <th scope="col">Action</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in ViewBag.brands)
+                    {
+
+
+                        <tr>
+                            <td>@item.brand_ID</td>
+                            <td>@item.brand_name</td>
+
+
+
+
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+
+                                    <button type="button" name="@item.brand_ID" id="@item.brand_ID" class="btn btn-primary update_brand">Update</button>
+                                    <button type="button" name="@item.brand_ID" id="@item.brand_ID" class="btn btn-danger dltBrand">Delete</button>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    }
+                </tbody>*@
+            </table>
+
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(".side_nave_hide").remove();
+
+    $(document).ready(function () {
+        $("#products_date").show();
+       // myModal_categoryVisProductsforVendor
+        $("#category_data").hide();
+        $("#brand_data").hide();
+
+        $('.table_show').change(function () {
+            debugger;
+            var a = this.value;
+            if (a == "products") {
+
+                $("#products_date").show();
+
+                $("#category_data").hide();
+                $("#brand_data").hide();
+            }
+            if (a == "categories") {
+                $("#category_data").show();
+
+                $("#products_date").hide();
+                $("#brand_data").hide()
+            }
+            if (a == "brands") {
+                $("#brand_data").show();
+
+                $("#products_date").hide();
+                $("#category_data").hide();
+
+            }
+
+
+        })
+    })
+
+</script>

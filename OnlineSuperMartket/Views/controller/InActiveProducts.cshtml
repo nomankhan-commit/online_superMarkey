@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "All_Data";
+    Layout = "~/Views/Shared/myLayOut.cshtml";
+}
+<div class="container">
+    <div class="row">
+        @Html.Partial("~/Views/Shared/secondGreenLineForAdmin.cshtml")
+
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div class="row" id="products_date">
+
+        <div class="col-md-12">
+
+
+
+
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Vendor</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Dis</th>
+                        <th scope="col">whole sale price</th>
+                        <th scope="col">retail price</th>
+                        <th scope="col">stock</th>
+                        <th scope="col">imgPath</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{var a = 0; }
+                    @foreach (var item in ViewBag.sp_products)
+                    {
+                        a++;
+                        var name = item.imgPath;
+                        <tr>
+                            <td>@item.Product_ID</td>
+                            <td>@item.Product_name</td>
+                            <td>@item.category_name</td>
+                            <td>@item.sellorName</td>
+                            <td>@item.brand_name</td>
+                            <td>@item.Product_disc</td>
+                            <td>@item.whole_sale_price</td>
+                            <td>@item.retail_price</td>
+                            <td>@item.stock</td>
+
+                            <td colspan=4><img src="~/AddProducts/Image/@name" alt="~/AddProducts/Image/@name" border=3 height=100 width=100></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="@Url.Action("MakeActiveProducts", "controller",new { id = item.Product_ID },null)"  id="@item.Product_ID" class="btn btn-primary">Make Active</a>
+
+                                    @*<button type="button" name="@item.Product_ID" id="@item.Product_ID" class="btn btn-primary update_product">Make Active</button>*@
+                                    @*<button type="button" name="@item.Product_ID" id="@item.Product_ID" class="btn btn-danger">Delete</button>*@
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+    <div class="row" id="category_data">
+
+        <div class="col-md-12">
+
+
+
+
+      
+
+
+        </div>
+    </div>
+    <div class="row" id="brand_data">
+
+        <div class="col-md-12">
+
+
+
+
+     
+
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(".side_nave_hide").remove();
+
+    $(document).ready(function () {
+        $("#products_date").show();
+
+        $("#category_data").hide();
+        $("#brand_data").hide();
+
+        $('.table_show').change(function () {
+            debugger;
+            var a = this.value;
+            if (a == "products") {
+
+                $("#products_date").show();
+
+                $("#category_data").hide();
+                $("#brand_data").hide();
+            }
+            if (a == "categories") {
+                $("#category_data").show();
+
+                $("#products_date").hide();
+                $("#brand_data").hide()
+            }
+            if (a == "brands") {
+                $("#brand_data").show();
+
+                $("#products_date").hide();
+                $("#category_data").hide();
+
+            }
+
+
+        })
+    })
+
+</script>

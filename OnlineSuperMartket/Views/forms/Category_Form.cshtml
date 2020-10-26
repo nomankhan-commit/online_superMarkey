@@ -1,0 +1,40 @@
+﻿
+   
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        @*<h4>Add Category</h4>*@                        
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                   
+                        <div class="form-check-inline">
+                            <label class="form-check-label" for="radio1">
+                                <input type="radio" class="form-check-input cat_brand_radio" id="radio1" name="optradio" value="category" checked>Add Category
+                            </label>
+                            <label class="form-check-label" for="radio2">
+                                <input type="radio" class="form-check-input cat_brand_radio" id="radio2" name="optradio" value="brand">Add Brand
+                            </label>
+                        </div>
+                                          
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                                                  
+                            <p class="notice">Add multiple category with "," or ";" spreated</p>
+                            <form action="" method="post" id="category_form_modal">
+                                <div class="form-group">
+                                    <label for="comment"></label>                                
+                                    <textarea class="form-control" rows="5" id="comment" name="category_name"></textarea>
+                                </div>
+                                <button type="button" id="add_Category" class="btn btn-primary add_cat_brand">Add</button>
+                            </form>
+                        </div>
+                   
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+           

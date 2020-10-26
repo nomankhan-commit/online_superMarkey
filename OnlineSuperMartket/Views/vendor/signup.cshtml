@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewBag.Title = "login_signup";
+    //Layout = "~/Views/Shared/myLayOut.cshtml";
+    Layout = null;
+    }
+
+
+
+    @*<div class="w3l_banner_nav_right">
+
+
+        <!-- login -->
+        <div class="w3_login">
+            <h3>Sellor Account</h3>
+            <div class="w3_login_module">
+                <div class="module form-module">
+                    <div class="toggle">
+                        <i class="fa fa-times fa-pencil"></i>
+                        <div class="tooltip">CHANGE</div>
+                    </div>
+                    <div class="form">
+                        <h2>Create an account As A Sellor</h2>
+                        <form action="sign_up" id="signUp_form" method="post">
+                            <input type="text" name="First_Name" placeholder="First Name" required="">
+                            <input type="text" name="Last_Name" placeholder="Last Name" required="">
+                            <input type="email" name="email" placeholder="Email" required="">
+                            <input type="text" name="Address" placeholder="Address" required="">
+                            <input type="password" name="password" placeholder="Password" required="">
+                            <input type="password" placeholder="Conform Password" required="">
+                            <input type="text" name="Mobile" placeholder="Mobile" required="">
+
+                              <input type="hidden" value="1234123" name="Credit_card_number" placeholder="Credit Card Number" required="">
+                            <input type="hidden" value="6464" name="Credit_card_expiry" placeholder="Credit Card Expiry" required="">
+
+                            <input type="submit" id="signup_submit_sellor" value="Register">
+                        </form>
+                    </div>
+                    <div class="form">
+                        <h2>Login to your account</h2>
+                        <form id="Login_form" method="post">
+                            <input type="email" name="email" placeholder="Email" required="">
+                            <input type="password" name="Password" placeholder="Password" required="">
+                            <input type="button" id="login_submit" value="Login">
+                        </form>
+                    </div>
+                    <div class="cta"><a href="#">Forgot your password?</a></div>
+
+
+
+                </div>
+            </div>
+            <script>
+                $(".side_nave_hide").remove();
+                $('.toggle').click(function () {
+                    debugger;
+                      // Switches the Icon
+                      $(this).children('i').toggleClass('fa-pencil');
+                      // Switches the forms
+                      $('.form').animate({
+                        height: "toggle",
+                        'padding-top': 'toggle',
+                        'padding-bottom': 'toggle',
+                        opacity: "toggle"
+                      }, "slow");
+                    });
+            </script>
+        </div>
+        <!-- //login -->
+    </div>*@
+
+<link href="~/Content/vendroFormContent/css/main.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <!-- Title Page-->
+    <title>Seller Center</title>
+    <!-- Icons font CSS-->
+    <link href="~/Content/vendroFormContent/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="~/Content/vendroFormContent/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Vendor CSS-->
+    <link href="~/Content/vendroFormContent/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/Content/vendroFormContent/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- Main CSS-->
+    <link href="~/Content/vendroFormContent/css/main.css" rel="stylesheet" media="all">
+</head>
+<body style="background-color:#84C639">
+    <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Seller Center</h2>
+                    <form method="POST" id="signUp_form">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="First_Name">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="Last_Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email">
+                                </div>
+                                <p id="CheckEmailMatch" style="padding-left: 54%"></p>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Address</label>
+                                    <input class="input--style-4" type="text" name="Address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input id="txtNewPassword" class="input--style-4" type="password" name="password">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Conform Password</label>
+                                    <input id="txtConfirmPassword" class="input--style-4" type="password">
+                                </div>
+                            </div>
+                            <p id="CheckPasswordMatch" style="padding-left: 54%"></p>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Shop Name</label>
+                                    <input class="input--style-4" type="text" name="shopname">
+                                </div>
+                            </div>
+                          
+                        </div>
+
+                        <input type="hidden" value="1234123" name="Credit_card_number" placeholder="Credit Card Number" required="">
+                        <input type="hidden" value="6464" name="Credit_card_expiry" placeholder="Credit Card Expiry" required="">
+
+                        <div class="p-t-15">
+                            <button id="signup_submit_sellor" class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jquery JS-->
+    <script src="~/Content/vendroFormContent/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="~/Content/vendroFormContent/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/vendroFormContent/vendor/datepicker/moment.min.js"></script>
+    <script src="~/Content/vendroFormContent/vendor/datepicker/daterangepicker.js"></script>
+    <!-- Main JS-->
+    <script src="~/Content/vendroFormContent/js/global.js"></script>
+
+
+    <script>
+        function checkPasswordMatch() {
+            var password = $("#txtNewPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+            if (password != confirmPassword){
+                $("#CheckPasswordMatch").html("Passwords does not match!").css('color','red');;
+                $("#signup_submit_sellor").attr("disabled", true);
+            }
+            else
+             {
+                 $("#CheckPasswordMatch").html("Passwords match.").css('color','green');
+                 $("#signup_submit_sellor").attr("disabled", false);
+           }
+    }
+        $(document).ready(function () {
+           $("#txtConfirmPassword").keyup(checkPasswordMatch);
+        });
+
+
+
+
+        $('#signup_submit_sellor').click(function (e) {
+            debugger;
+            e.preventDefault();
+            $.ajax({
+                url: `/vendor/getRegister`,
+                dataType: 'json',
+                type: 'post',
+                data: $('#signUp_form').serialize(),
+                success: function (response) {
+                    debugger;
+                    var controller_result = response;
+                    if (controller_result == true) {
+
+                        window.location.href = "/vendor/firstScreen";
+                    }
+
+                    if (controller_result == false) {
+
+                        //alert("Your email already is in use.")
+                        $("#CheckEmailMatch").html("Your email already is in use.").css("color","red");
+                    }
+
+                },
+
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        });
+
+    </script>
+
+
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+<!-- end document-->

@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "login_signup";
+    Layout = "~/Views/Shared/myLayOut.cshtml";
+}
+
+
+
+<div class="w3l_banner_nav_right">
+
+
+    <!-- login -->
+    <div class="w3_login">
+        <h3>Sign In & Sign Up</h3>
+        <div class="w3_login_module">
+            <div class="module form-module">
+                <div class="toggle">
+                    <i class="fa fa-times fa-pencil"></i>
+                    <div class="tooltip">CHANGE</div>
+                </div>
+                <div class="form">
+                    <h2>Login to your account</h2>
+                    <form id="Login_form" method="post">
+                        <input type="email" name="email" placeholder="Email" required="">
+                        <input type="password" name="Password" placeholder="Password" required="">
+                        <input type="button" id="login_submit" value="Login">
+                    </form>
+                </div>
+                <div class="form">
+                    <h2>Create an account</h2>
+                    <form action="sign_up" id="signUp_form" method="post">
+                        <input type="text"  name="First_Name" placeholder="First Name" required="" >
+                        <input type="text"  name="Last_Name" placeholder="Last Name" required="">
+                        <input type="email" name="email" placeholder="Email" required="">
+                        <input type="text" name="Address" placeholder="Address" required="">
+                        <input type="password" id="password" name="password" placeholder="Password" required="">
+                        <input type="password" id="conformpassword" placeholder="Conform Password" required="">
+                        <p id="CheckPasswordMatch" style="padding-left: 54%"></p>
+                        <input type="text" name="Mobile" placeholder="Mobile" required="">
+                        <input type="hidden" value="1234123" name="Credit_card_number" placeholder="Credit Card Number" required="">
+                        <input type="hidden" value="6464" name="Credit_card_expiry" placeholder="Credit Card Expiry" required="">
+                      
+                        <input type="button" id="signup_submit" value="Register">
+                    </form>
+                </div>
+                @*<div class="cta"><a href="#">Forgot your password?</a></div>*@
+
+              
+
+            </div>
+        </div>
+        <script>
+
+            function checkPasswordMatch() {
+                var password = $("#password").val();
+                var confirmPassword = $("#conformpassword").val();
+                if (password != confirmPassword) {
+                    $("#CheckPasswordMatch").html("Passwords does not match!").css('color', 'red');;
+                    $("#signup_submit").attr("disabled", true);
+                }
+                else {
+                    $("#CheckPasswordMatch").html("Passwords match.").css('color', 'green');
+                    $("#signup_submit").attr("disabled", false);
+                }
+            }
+            $(document).ready(function () {
+            $("#conformpassword").keyup(checkPasswordMatch);
+            });
+
+
+
+            $('.toggle').click(function () {
+                debugger;
+				  // Switches the Icon
+				  $(this).children('i').toggleClass('fa-pencil');
+				  // Switches the forms
+				  $('.form').animate({
+					height: "toggle",
+					'padding-top': 'toggle',
+					'padding-bottom': 'toggle',
+					opacity: "toggle"
+				  }, "slow");
+				});
+        </script>
+    </div>
+    <!-- //login -->
+</div>
